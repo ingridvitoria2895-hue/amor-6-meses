@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #faf3e0; /* Cor creme suave */
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #800020; /* Cor Vinho/Marsala */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/image_0.jpg'); /* Foto de capa */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-down span {
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+    margin: -5px;
+    animation: scroll 2s infinite;
+}
+
+.scroll-down span:nth-child(2) { animation-delay: 0.2s; }
+.scroll-down span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes scroll {
+    0% { opacity: 0; transform: rotate(45deg) translate(-10px, -10px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: rotate(45deg) translate(10px, 10px); }
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #e0bfb8; /* Rosa Gold */
+}
+
+.mensagem p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-fotos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding-top: 20px;
+}
+
+.foto-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 300px;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.foto-item:hover {
+    transform: translateY(-5px);
+}
+
+.foto-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .foto-item.destaque {
+        grid-column: span 2;
+    }
+}
+
+.contador-section {
+    background-color: #800020; 
+    color: white;
+    padding: 60px 20px;
+}
+
+.contador-section h2 {
+    color: white;
+}
+
+.contador-section h2::after {
+    background-color: white;
+}
+
+.contador-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.time-box {
+    text-align: center;
+}
+
+.time-box span {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.time-box p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.contador-footer {
+    margin-top: 30px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.musica iframe {
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+footer {
+    background-color: #4a4a4a;
+    color: #faf3e0;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
